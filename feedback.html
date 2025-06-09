@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="edit.css">
+  <title>Feedback</title>
+</head>
+<body>
+  <ul>
+    <a href="index.html" class="logo"><img src="img/RnR.png" alt="logo" width="200"></a>
+    <a href="index.html" class="gif"><img src="img/ZNec.gif" alt="gif" width="100"></a>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a class="gamesbtn">Games</a>
+      <div class="dropdown-content">
+        <a href="adventure.html">Adventure games</a>
+        <a href="puzzle.html">Puzzle games</a>
+        <a href="casual.html">Casual games</a>
+      </div>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a class="underline" href="feedback.html">Feedback</a></li>
+  </ul>
+
+  <section>
+    <h1>Feedback</h1>
+    <p>How would you rate your experience with us?</p>
+    <div class="stars">
+      <span data-rating="1">★</span>
+      <span data-rating="2">★</span>
+      <span data-rating="3">★</span>
+      <span data-rating="4">★</span>
+      <span data-rating="5">★</span>
+    </div>
+    <p>Are there any games you'd like to suggest or improvements you'd like to see in the future? Please comment below.</p>
+    <textarea id="feedbackInput" placeholder="Comments"></textarea>
+    <br>
+    <button id="submitBtn" onclick="submitFeedback()">Submit</button>
+    <p id="responseMsg" style="color: green;"></p>
+  </section>
+
+  <script>
+    function submitFeedback() {
+      const feedback = document.getElementById("feedbackInput").value.trim();
+      const responseMsg = document.getElementById("responseMsg");
+
+      if (!feedback) {
+        alert("Please enter your feedback.");
+        return;
+      }
+
+      fetch("https://script.google.com/macros/s/AKfycbyLbWvj61mnXooqzT_bNluIJNuOF9Rz0LuDjs71xCPtLJCQ9R9gadGOF0n52k_pJ28P/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `feedback=${encodeURIComponent(feedback)}`
+      })
+      .then(() => {
+        responseMsg.textContent = "Thank you for your feedback!";
+        document.getElementById("feedbackInput").value = "";
+        alert("Thanks for the feedback");
+      })
+      .catch((error) => {
+        responseMsg.style.color = "red";
+        responseMsg.textContent = "There was an error. Try again.";
+        console.error("Error:", error);
+      });
+    }
+  </script>
+</body>
+</html>

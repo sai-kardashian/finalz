@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="edit.css">
+  <title>Adventure Games</title>
+
+</head>
+<body>
+  <ul>
+    <a href="index.html" class="logo"><img src="img/RnR.png" alt="logo" width="200"></a>
+    <a href="index.html" class="gif"><img src="img/3vIG.gif" alt="gif" width="100"></a>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a class="underline" class="gamesbtn">Games</a>
+      <div class="dropdown-content">
+        <a href="adventure.html">Adventure games</a>
+        <a href="puzzle.html">Puzzle games</a>
+        <a href="casual.html">Casual games</a>
+      </div>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    
+  </ul>
+
+  
+  <section>
+      <h1>Adventure Games</h1>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Search for Games...">
+        <button id="searchButton">Search</button>
+        <button id="clearSearchButton">Clear Search</button>
+        <select name="sorting" id="sortSelect">
+          <option value="none">Sort by....</option>
+          <option value="nameAsc">Name (A-Z)</option>
+          <option value="nameDesc">Name (Z-A)</option>
+        </select>
+      </div>
+      <div class="games" id="gameList">
+          <div class="game-wrapper">
+              <div><img class="game-thumbnail" src="img/planet-fall.jpg" alt="Planet Fall image"></div>
+              <h2>Planet Fall</h2>
+              <p>A space exploration game. The goal is to find satellite stations on each planet and take them offline</p>
+              <a href="https://play.js13kgames.com/planetfall/"><button class="play-button">Play</button></a>
+          </div>
+          <div class="game-wrapper">
+              <div><img class="game-thumbnail" src="img/quest-of-tod.jpg" alt="Quest of Tod Image"></div>
+              <h2>Quest of Tod</h2>
+              <p>Quest of Tod is a speed running adventure game, where you stuck inside unknown place controlled by strange machine. Can you find all the keys and codes to unlock the exit before the time runs out?</p>
+              <a href="https://play.js13kgames.com/quest-of-tod/"><button class="play-button">Play</button></a>
+          </div>
+          <div class="game-wrapper">
+              <div><img class="game-thumbnail" src="img/dwarfs.jpg" alt="Dwarfs"></div>
+              <h2>Dwarfs: There and Back Again</h2>
+              <p>Dwarfs: There and Back Again is a tale of high adventure, undertaken by a company of dwarfs, in search of dragon-guarded gold, true friendship, and varieties of ale (not necessarily in that order).</p>
+              <a href="https://play.js13kgames.com/dwarfs-there-and-back-again/"><button class="play-button">Play</button></a>
+          </div>
+      </div>
+  </section>
+</body>
+</html>

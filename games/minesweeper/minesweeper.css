@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+h1 {
+    color: #333;
+}
+
+.game-container {
+    background-color: #eee;
+    border: 5px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #555;
+}
+
+#reset-button {
+    padding: 8px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #45a049;
+}
+
+.game-board {
+    display: grid;
+    /* This will be set by JavaScript based on board size */
+    border: 2px solid #999;
+}
+
+.cell {
+    width: 30px; /* Adjust cell size as needed */
+    height: 30px;
+    background-color: #a0a0a0;
+    border: 2px solid #c0c0c0;
+    border-bottom-color: #707070;
+    border-right-color: #707070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2em;
+    cursor: pointer;
+    user-select: none; /* Prevent text selection */
+}
+
+.cell.revealed {
+    background-color: #d3d3d3;
+    border: 1px solid #999;
+    cursor: default;
+}
+
+/* Colors for numbers */
+.cell.num-1 { color: blue; }
+.cell.num-2 { color: green; }
+.cell.num-3 { color: red; }
+.cell.num-4 { color: purple; }
+.cell.num-5 { color: maroon; }
+.cell.num-6 { color: teal; }
+.cell.num-7 { color: black; }
+.cell.num-8 { color: gray; }
+
+.cell.mine {
+    background-color: #ff6666;
+    border: 1px solid #999;
+}
+
+.cell.flagged {
+    background-color: #e6e600; /* Yellowish */
+    color: white;
+}
+
+.cell.flagged::before {
+    content: '🚩'; /* Flag emoji */
+    font-size: 1.2em;
+}
+
+.cell.mine.exploded {
+    background-color: red;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game Roulette</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="snake.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <h1>Snake Game</h1>
+    <canvas id="gameCanvas" width="400" height="400"></canvas>
+    <div id="gameInfo">
+        <div id="score" class="rounded-lg shadow-md">Score: 0</div>
+        <div id="ruleDisplay" class="rounded-lg shadow-md">Current Rule: None</div>
+        <div id="ruleTimer" class="rounded-lg shadow-md">Next Rule in: 10s</div>
+    </div>
+    <button id="startButton" class="rounded-lg shadow-lg">Start Game</button>
+
+    <div id="messageModal">
+        <div id="modalContent">
+            <p id="modalMessage"></p>
+            <button id="closeModal">OK</button>
+        </div>
+    </div>
+
+    <div class="rules">
+        <ul>
+            <li>Click Start Button to begin!</li>
+            <li>Use arrow keys to control the direction of the snake</li>
+            <li>Guide the snake to eat the red food squares to grow and increase your score.</li>
+            <li>Don't let the snake hit the walls or itself. If it does, the game ends.</li>
+            <li>After the game ends, you can click "Start Game" again to play.</li>
+            <li>Watch for rules: Every 10 seconds, a new rule will be applied changing how the game behaves.</li>
+            <li>Speed Up!: The snake moves faster.</li>
+            <li>Inverted Controls!: Up is down, left is right, etc.</li>
+            <li>Rotated Controls!: Your directional inputs are rotated 90 degrees clockwise (e.g., pressing Up moves Right).</li>
+            <li>Bombs Appear!: A purple bomb will appear. Eating it will halve your snake's length and reduce your score.</li>
+            <li>Enjoy the chaotic fun of Snake Game Roulette!</li>
+        </ul>
+    </div>
+    <script src="snake.js"></script>
+</body>
+</html>

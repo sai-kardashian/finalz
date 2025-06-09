@@ -1,0 +1,157 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #282c34; /* Dark background */
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #ffffff;
+    flex-direction: column;
+    padding: 20px; /* Add some padding for smaller screens */
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #61dafb; /* Light blue for title */
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+canvas {
+    background-color: #3a3f4c; /* Slightly lighter dark background for canvas */
+    border: 2px solid #61dafb; /* Light blue border */
+    border-radius: 10px; /* Rounded corners for canvas */
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.5); /* Glowing effect */
+    max-width: 100%; /* Ensure responsiveness */
+    height: auto; /* Maintain aspect ratio */
+}
+#gameInfo {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-around; /* Distribute items evenly */
+    width: 400px; /* Match canvas width */
+    max-width: 100%; /* Ensure responsiveness */
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #ffffff;
+    gap: 10px; /* Space between info boxes */
+}
+#score, #ruleDisplay, #ruleTimer {
+    padding: 10px 15px;
+    background-color: #3a3f4c;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    flex: 1 1 auto; /* Allow items to grow and shrink */
+    text-align: center;
+    min-width: 120px; /* Minimum width for info boxes */
+}
+button {
+    margin-top: 30px;
+    padding: 12px 25px;
+    font-size: 1.3em;
+    background: linear-gradient(45deg, #61dafb, #21a1f1); /* Gradient background */
+    color: #282c34;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+button:hover {
+    background: linear-gradient(45deg, #21a1f1, #61dafb);
+    transform: translateY(-3px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.5);
+}
+
+/* Custom Modal Styles */
+#messageModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+#modalContent {
+    background-color: #3a3f4c; /* Modal background */
+    margin: auto;
+    padding: 30px;
+    border: 2px solid #61dafb; /* Modal border */
+    border-radius: 15px; /* Rounded corners */
+    width: 90%; /* Responsive width */
+    max-width: 400px; /* Max width */
+    text-align: center;
+    color: #ffffff;
+    box-shadow: 0 5px 20px rgba(97, 218, 251, 0.7); /* Glowing effect */
+    animation: fadeIn 0.3s ease-out;
+}
+
+#modalMessage {
+    font-size: 1.6em;
+    margin-bottom: 25px;
+    font-weight: bold;
+    color: #61dafb;
+}
+
+#closeModal {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background: linear-gradient(45deg, #61dafb, #21a1f1);
+    color: #282c34;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+#closeModal:hover {
+    background: linear-gradient(45deg, #21a1f1, #61dafb);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+    canvas {
+        width: 300px;
+        height: 300px;
+    }
+    #gameInfo {
+        flex-direction: column; /* Stack info boxes on small screens */
+        align-items: center;
+        width: 300px;
+    }
+    #score, #ruleDisplay, #ruleTimer {
+        width: 100%;
+    }
+    button {
+        font-size: 1.1em;
+        padding: 10px 20px;
+    }
+    #modalContent {
+        padding: 20px;
+    }
+    #modalMessage {
+        font-size: 1.4em;
+    }
+}

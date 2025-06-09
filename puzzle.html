@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="edit.css">
+  <title>Puzzle Games</title>
+</head>
+<body>
+  <ul>
+    <a href="index.html" class="logo"><img src="img/RnR.png" alt="logo" width="200"></a>
+    <a href="index.html" class="gif"><img src="img/3vIP.gif" alt="gif" width="100"></a>
+    <li><a href="index.html">Home</a></li>
+    <li class="dropdown">
+      <a class="underline" class="gamesbtn">Games</a>
+      <div class="dropdown-content">
+        <a href="adventure.html">Adventure games</a>
+        <a href="puzzle.html">Puzzle games</a>
+        <a href="casual.html">Casual games</a>
+        
+      </div>
+    </li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+    
+  </ul>
+  <section>
+      <h1>Puzzle Games</h1>
+      <div class="search">
+        <input type="text" id="searchInput" placeholder="Search for Games...">
+        <button id="searchButton">Search</button>
+        <button id="clearSearchButton">Clear Search</button>
+        <select name="sorting" id="sortSelect">
+          <option value="none">Sort by....</option>
+          <option value="nameAsc">Name (A-Z)</option>
+          <option value="nameDesc">Name (Z-A)</option>
+        </select>
+      </div>
+      <div class="games">
+          <div class="game-wrapper">
+              <div><img class="game-thumbnail" src="img/1024.jpg" alt="1024"></div>
+              <h2>1024 Moves</h2>
+              <p>This puzzle can be solved in 1024 movements. That is to say, I think it is not possible to do it in less than 1024 movements. And you ?</p>
+              <a href="https://play.js13kgames.com/1024-moves/"><button class="play-button">Play</button></a>
+          </div>
+          <div class="game-wrapper">
+              <div><img class="game-thumbnail" src="img/raven.jpg" alt="raven picture"></div>
+              <h2>Raven</h2>
+              <p>In this 2D top-down action-puzzle game, the security cameras for a secret facility have been taken offline,
+                  and it is YOUR job to fix the problem. Take on a series of floors overrun by mysterious enemies known only as
+                  "Raven" -- although harmless as long as you can see them, they are deadly if you turn your back.
+              </p>
+              <a href="https://play.js13kgames.com/raven/"><button class="play-button">Play</button></a>
+          </div>
+          <div class="game-wrapper">
+              <div><img class="game-thumbnail" src="img/lost-treasure.jpg" alt="lost treasure picture"></div>
+              <h2>Lost Treasure</h2>
+              <p>'Lost Treasure' is a short retro style puzzle-platformer game. There are 7 different levels (for now) to go through and collect treasure back to little Flo. 
+                Avoid little creatures and collect all diamonds.</p>
+              <a href="https://play.js13kgames.com/lost-treasure/"><button class="play-button">Play</button></a>
+          </div>
+      </div>
+  </section>
+</body>
+</html>
